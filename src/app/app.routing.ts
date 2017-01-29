@@ -33,8 +33,14 @@ const routes:Routes = [
 
 //implement modules
 @NgModule({
-    imports:[RouterModule.forRoot(routes)] //returns a Router Module configured for our predeclared routes
+    imports:[RouterModule.forRoot(routes)], //returns a Router Module configured for our predeclared routes
+    exports:[RouterModule] //we export the configured module so we can import it in our root module, thereby implementing
+    //the routing logic in the entire app.
 })
 
+export class AppRoutingModule {}
+
+//Finally we import our components as one, so we don't import twice.
+export const routingComponent = [FirstComponent, SecondComponent, ThirdComponent];
 
 
