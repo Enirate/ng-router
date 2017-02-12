@@ -2,21 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { GeneralService } from './general.service';//import service
 
 import { AppRoutingModule, routingComponent } from './app.routing';
 
 import { AppComponent } from './app.component';
-// import { FirstComponent } from './first/first.component';
-// import { SecondComponent } from './second/second.component';
-// import { ThirdComponent } from './third/third.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponent
-    // FirstComponent,
-    // SecondComponent,
-    // ThirdComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +19,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GeneralService], //declare as provider
   bootstrap: [AppComponent]
 })
 export class AppModule { }
