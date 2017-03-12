@@ -7,6 +7,8 @@ import { TechLeadersComponent } from './components/tech-leaders/tech-leaders.com
 //so we locate the habitat file
 import { TechpreneursComponent } from './components/techpreneurs/techpreneurs.component'; //'./' takes you out of the present file into the app folder
 import { ErrorComponent } from './components/error/error.component';
+import { TechLeadersDetailsComponent } from './components/tech-leaders-details/tech-leaders-details.component';
+import { TechpreneursDetailsComponent } from './components/techpreneurs-details/techpreneurs-details.component';
 
 const routes:Routes = [ 
     
@@ -19,14 +21,22 @@ const routes:Routes = [
         path: 'techpreneurs',
         component: TechpreneursComponent,
         children:[
-
+            {
+                path:'techpreneurs-details/:id',
+                component: TechpreneursDetailsComponent
+            },
+            
         ]
     },
     {
         path: 'tech-leaders',
         component: TechLeadersComponent,
         children:[
-
+            {
+                path:'tech-leaders-details/:id',
+                component: TechLeadersDetailsComponent
+            },
+            
         ]
     },
     {
@@ -50,6 +60,6 @@ const routes:Routes = [
 export class AppRoutingModule {}
 
 //Finally we import our components as one, so we don't import twice.
-export const routingComponent = [ErrorComponent, TechLeadersComponent, TechpreneursComponent, AboutComponent];
+export const routingComponent = [ErrorComponent, TechLeadersComponent, TechpreneursComponent, AboutComponent, TechpreneursDetailsComponent,TechLeadersDetailsComponent];
 
 
