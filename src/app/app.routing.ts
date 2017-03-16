@@ -30,7 +30,8 @@ const routes:Routes = [
         component: TechpreneurDetailComponent
     },
     {
-        path:'tech-leaders/tech-leaders-details/:id',
+        //the ':' prefix indicates a placeholder parameter that will be replaced by a real value. in this case the id of techpreneurs and tech-leaders
+        path:'tech-leaders/tech-leaders-details/:id', 
         component: TechLeadersDetailComponent
     },
     {
