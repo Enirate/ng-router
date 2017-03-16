@@ -1,5 +1,4 @@
 <ul>
-<li *ngFor="let person of techpreneursList" class="text-success" ><a [routerLink]="['techpreneurs-details',person.id]">
+<li *ngFor="let person of techpreneursList" class="text-success" ><a [routerLink]="['/techpreneurs/techpreneurs-details',person.id]">
 {{person.name}}</a></li>
 </ul>
-<router-outlet></router-outlet>

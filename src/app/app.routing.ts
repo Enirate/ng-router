@@ -7,8 +7,8 @@ import { TechLeadersComponent } from './components/tech-leaders/tech-leaders.com
 //so we locate the habitat file
 import { TechpreneursComponent } from './components/techpreneurs/techpreneurs.component'; //'./' takes you out of the present file into the app folder
 import { ErrorComponent } from './components/error/error.component';
-import { TechLeadersDetailsComponent } from './components/tech-leaders-details/tech-leaders-details.component';
-import { TechpreneursDetailsComponent } from './components/techpreneurs-details/techpreneurs-details.component';
+import { TechLeadersDetailComponent } from './components/tech-leaders-detail/tech-leaders-detail.component';
+import { TechpreneurDetailComponent } from './components/techpreneur-detail/techpreneur-detail.component';
 
 const routes:Routes = [ 
     
@@ -20,29 +20,23 @@ const routes:Routes = [
     {
         path: 'techpreneurs',
         component: TechpreneursComponent,
-        children:[
-            {
-                path:'techpreneurs-details/:id',
-                component: TechpreneursDetailsComponent
-            },
-            
-        ]
     },
     {
         path: 'tech-leaders',
         component: TechLeadersComponent,
-        children:[
-            {
-                path:'tech-leaders-details/:id',
-                component: TechLeadersDetailsComponent
-            },
-            
-        ]
+    },
+    {
+        path:'techpreneurs/techpreneurs-details/:id',
+        component: TechpreneurDetailComponent
+    },
+    {
+        path:'tech-leaders/tech-leaders-details/:id',
+        component: TechLeadersDetailComponent
     },
     {
         path:'', //base url will show this component.
         pathMatch:'full',
-        redirectTo:'tech-leaders' //redirect to this component path. Notice: component path(string) not component class name
+        redirectTo:'techpreneurs' //redirect to this component path. Notice: component path(string) not component class name
     },
     {
         path:'**', //if url extension doesn't exit users will be redirected to this component.
@@ -60,6 +54,6 @@ const routes:Routes = [
 export class AppRoutingModule {}
 
 //Finally we import our components as one, so we don't import twice.
-export const routingComponent = [ErrorComponent, TechLeadersComponent, TechpreneursComponent, AboutComponent, TechpreneursDetailsComponent,TechLeadersDetailsComponent];
+export const routingComponent = [ErrorComponent, TechLeadersComponent, TechpreneursComponent, AboutComponent, TechpreneurDetailComponent, TechLeadersDetailComponent];
 
 
